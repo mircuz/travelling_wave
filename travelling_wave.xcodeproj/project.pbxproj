@@ -263,7 +263,7 @@
 				HEADER_SEARCH_PATHS = /opt/intel/include;
 				ICC_CXX_LANG_DIALECT = "c++17";
 				ICC_LANG_OPENMP = parallel;
-				ICC_OPTLEVEL = none;
+				ICC_OPTLEVEL = speedHLO;
 				ICC_OPT_PARALLEL = YES;
 				ICC_OPT_REQUIRE_INTEL_ARCH = kabylake;
 				ICC_OPT_USE_INTEL_ARCH = kabylake;
@@ -280,7 +280,7 @@
 				HEADER_SEARCH_PATHS = /opt/intel/include;
 				ICC_CXX_LANG_DIALECT = "c++17";
 				ICC_LANG_OPENMP = parallel;
-				ICC_OPTLEVEL = none;
+				ICC_OPTLEVEL = speedHLO;
 				ICC_OPT_PARALLEL = YES;
 				ICC_OPT_REQUIRE_INTEL_ARCH = kabylake;
 				ICC_OPT_USE_INTEL_ARCH = kabylake;
