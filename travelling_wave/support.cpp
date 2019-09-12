@@ -14,7 +14,7 @@
 void Grid::initialize_grid(){
     
     double step = length / nx;
-#pragma omp parallel for
+#pragma omp parallel for schedule(dynamic)
     for (int i=0; i<nx; i++) {
         position[i]=step*i;
     }
@@ -75,20 +75,20 @@ void f::solve_pde(double c, double t_limit) {
         
         while (t<t_limit) {
             //    build rhs
-#pragma omp parallel for
+#pragma omp parallel for schedule(dynamic)
             for (int i=0; i<nx; i++) {
                 rhs[i]= f_t[i-1] + f_t[i+1] - 2*f_t[i];
             }
             if (t==0) {
             //        Solve f at 0+dt
-#pragma omp parallel for
+#pragma omp parallel for schedule(dynamic)
                 for (int i=0; i<nx; i++) {
                     f_tn[i]= -0.5*C*C*rhs[i] + f_t[i];
                 }
             }
             else {
             //        Solve f at t+dt
-#pragma omp parallel for
+#pragma omp parallel for schedule(dynamic)
                 for (int i=0; i<nx; i++) {
                     f_tn[i]= C*C*rhs[i] + 2*f_t[i]- f_tm[i];
                 }

@@ -258,6 +258,7 @@
 		A8D0BFD123298AF300DC7FB0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_USE_OPTIMIZATION_PROFILE = YES;
 				CODE_SIGN_STYLE = Automatic;
 				GCC_VERSION = com.intel.compilers.icc.19_0_0;
 				HEADER_SEARCH_PATHS = /opt/intel/include;
@@ -275,6 +276,7 @@
 		A8D0BFD223298AF300DC7FB0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_USE_OPTIMIZATION_PROFILE = YES;
 				CODE_SIGN_STYLE = Automatic;
 				GCC_VERSION = com.intel.compilers.icc.19_0_0;
 				HEADER_SEARCH_PATHS = /opt/intel/include;
