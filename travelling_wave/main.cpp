@@ -7,9 +7,26 @@
 //
 
 #include <iostream>
+#include "omp.h"
+#include "support.hpp"
+
+
+double *dx;
+Grid grid(10,5);
+
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+    using namespace std;
+   
+    grid.initialize_grid();
+    grid.show_grid();
+    dx = grid.compute_deltax();
+    
+    
+    for (int i=0; i<10-1; i++) {
+        cout << "dx[" << i << "-" << i+1 << "]=" << *(dx+i) << endl;
+    }
+    
+    
     return 0;
 }

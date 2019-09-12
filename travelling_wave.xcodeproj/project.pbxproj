@@ -8,7 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		A8D0BFCD23298AF300DC7FB0 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8D0BFCC23298AF300DC7FB0 /* main.cpp */; };
+		A8D0BFD623298D5400DC7FB0 /* support.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8D0BFD423298D5400DC7FB0 /* support.cpp */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXBuildRule section */
+		A8D0BFD323298AFB00DC7FB0 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.intel.compilers.icc.19_0_0;
+			fileType = sourcecode.cpp;
+			isEditable = 1;
+			outputFiles = (
+			);
+			script = "# Type a script or drag a script file from your workspace to insert its path.\n";
+		};
+/* End PBXBuildRule section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		A8D0BFC723298AF300DC7FB0 /* CopyFiles */ = {
@@ -25,6 +38,8 @@
 /* Begin PBXFileReference section */
 		A8D0BFC923298AF300DC7FB0 /* travelling_wave */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = travelling_wave; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8D0BFCC23298AF300DC7FB0 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		A8D0BFD423298D5400DC7FB0 /* support.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = support.cpp; sourceTree = "<group>"; };
+		A8D0BFD523298D5400DC7FB0 /* support.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = support.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +72,8 @@
 		A8D0BFCB23298AF300DC7FB0 /* travelling_wave */ = {
 			isa = PBXGroup;
 			children = (
+				A8D0BFD423298D5400DC7FB0 /* support.cpp */,
+				A8D0BFD523298D5400DC7FB0 /* support.hpp */,
 				A8D0BFCC23298AF300DC7FB0 /* main.cpp */,
 			);
 			path = travelling_wave;
@@ -74,6 +91,7 @@
 				A8D0BFC723298AF300DC7FB0 /* CopyFiles */,
 			);
 			buildRules = (
+				A8D0BFD323298AFB00DC7FB0 /* PBXBuildRule */,
 			);
 			dependencies = (
 			);
@@ -119,6 +137,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A8D0BFCD23298AF300DC7FB0 /* main.cpp in Sources */,
+				A8D0BFD623298D5400DC7FB0 /* support.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,6 +259,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				GCC_VERSION = com.intel.compilers.icc.19_0_0;
+				HEADER_SEARCH_PATHS = /opt/intel/include;
+				ICC_CXX_LANG_DIALECT = "c++17";
+				ICC_LANG_OPENMP = parallel;
+				ICC_OPTLEVEL = none;
+				ICC_OPT_PARALLEL = YES;
+				ICC_OPT_REQUIRE_INTEL_ARCH = kabylake;
+				ICC_OPT_USE_INTEL_ARCH = kabylake;
+				ICC_TUNE_FOR_INTEL_ARCH = kabylake;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -248,6 +276,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				GCC_VERSION = com.intel.compilers.icc.19_0_0;
+				HEADER_SEARCH_PATHS = /opt/intel/include;
+				ICC_CXX_LANG_DIALECT = "c++17";
+				ICC_LANG_OPENMP = parallel;
+				ICC_OPTLEVEL = none;
+				ICC_OPT_PARALLEL = YES;
+				ICC_OPT_REQUIRE_INTEL_ARCH = kabylake;
+				ICC_OPT_USE_INTEL_ARCH = kabylake;
+				ICC_TUNE_FOR_INTEL_ARCH = kabylake;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
