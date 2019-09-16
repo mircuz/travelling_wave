@@ -66,7 +66,7 @@ void f::init_f( int nx, int ny, double arr_t[][ny]) {
     for (int i=0; i<nx; i++) {
         f_t[i]  = new double[ny];
     }
-    
+#pragma omp parallel for
     for (int i=0; i<nx; i++) {
         for (int j=0; j<ny; j++) {
             f_t[i][j]= arr_t[i][j];
@@ -86,17 +86,7 @@ void f::solve_pde(double c, double t_limit) {
     std::ofstream outfile;
     outfile.open("results.txt", std::ios::trunc);
     if (outfile.is_open()) {
-        for (int i=0; i<nx; i++) {
-            for (int j=0; j<ny; j++) {
-                outfile << f_t[i][j] << "\t";
-                if (j==ny-1) {
-                    outfile << std::endl;
-                }
-            }
-            if (i==nx-1) {
-                outfile << std::endl;
-            }
-        }
+        outfile << "{" << std::endl;
         
         double t=0, dt;
         double** rhs_x = new double*[nx];
@@ -209,7 +199,8 @@ void f::solve_pde(double c, double t_limit) {
                 }
                 }
                 if (i==nx-1) {
-                    outfile << std::endl;
+                    outfile << "}" << std::endl;
+                    outfile << "{" << std::endl;
             }
         }
     }

@@ -10,8 +10,15 @@
 #include "omp.h"
 #include "support.hpp"
 
-#define NX 10
-#define NY 10
+
+#ifndef NX
+    #define NX 10
+#endif
+#ifndef NY
+    #define NY 10
+#endif
+
+/* To varying mesh dimension compile with -DN..=val */
 
 f wave1(NX,NY);
 double ft[NX][NY]= {0};
@@ -28,7 +35,7 @@ int main(int argc, const char * argv[]) {
 //    wave1.f_grid.show_grid();
     
     wave1.init_f(NX,NY,ft);
-    wave1.solve_pde(1,2);
+    wave1.solve_pde(1,3);
     
     
     return 0;

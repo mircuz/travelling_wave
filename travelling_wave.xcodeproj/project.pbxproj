@@ -260,7 +260,9 @@
 			buildSettings = {
 				CLANG_USE_OPTIMIZATION_PROFILE = YES;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.9;
 				GCC_VERSION = com.intel.compilers.icc.19_0_0;
+				GENERATE_PROFILING_CODE = YES;
 				HEADER_SEARCH_PATHS = /opt/intel/include;
 				ICC_CXX_LANG_DIALECT = "c++17";
 				ICC_LANG_OPENMP = parallel;
@@ -268,6 +270,7 @@
 				ICC_OPT_PARALLEL = YES;
 				ICC_OPT_REQUIRE_INTEL_ARCH = kabylake;
 				ICC_OPT_USE_INTEL_ARCH = kabylake;
+				ICC_OTHER_CPLUSPLUSFLAGS = "$(ICC_OTHER_CFLAGS) $(OTHER_CPLUSPLUSFLAGS) -DNX=100 -DNY=100";
 				ICC_TUNE_FOR_INTEL_ARCH = kabylake;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -278,7 +281,9 @@
 			buildSettings = {
 				CLANG_USE_OPTIMIZATION_PROFILE = YES;
 				CODE_SIGN_STYLE = Automatic;
+				ENABLE_TESTABILITY = YES;
 				GCC_VERSION = com.intel.compilers.icc.19_0_0;
+				GENERATE_PROFILING_CODE = YES;
 				HEADER_SEARCH_PATHS = /opt/intel/include;
 				ICC_CXX_LANG_DIALECT = "c++17";
 				ICC_LANG_OPENMP = parallel;
@@ -286,6 +291,7 @@
 				ICC_OPT_PARALLEL = YES;
 				ICC_OPT_REQUIRE_INTEL_ARCH = kabylake;
 				ICC_OPT_USE_INTEL_ARCH = kabylake;
+				ICC_OTHER_CPLUSPLUSFLAGS = "$(ICC_OTHER_CFLAGS) $(OTHER_CPLUSPLUSFLAGS) -DNX=100 -DNY=100";
 				ICC_TUNE_FOR_INTEL_ARCH = kabylake;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
