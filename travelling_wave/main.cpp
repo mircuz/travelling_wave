@@ -10,26 +10,25 @@
 #include "omp.h"
 #include "support.hpp"
 
-#define NX 100
+#define NX 10
+#define NY 10
 
-f wave1(NX);
-double ft[NX]= {0};
+f wave1(NX,NY);
+double ft[NX][NY]= {0};
 
 int main(int argc, const char * argv[]) {
     using namespace std;
-    int impulse_pos;
-    cout << "Insert the Impulse position.\nSet a value among 1 and " << NX-1 << endl;
-    cin >> impulse_pos;
-    ft[impulse_pos]=1;
+    int impulsex, impulsey;
+    cout << "Insert the Impulse position.\nSet x value among 1 and " << NX-2 << " and y value among 1 and " << NY-2 << endl;
+    cin >> impulsex >> impulsey;
+    ft[impulsex][impulsey]=1;
     
 //    Preliminar Grid operations
     wave1.f_grid.initialize_grid();
 //    wave1.f_grid.show_grid();
-    wave1.f_grid.compute_deltax();
     
-    
-    wave1.init_f(NX,ft);
-    wave1.solve_pde(1,15);
+    wave1.init_f(NX,NY,ft);
+    wave1.solve_pde(1,2);
     
     
     return 0;
